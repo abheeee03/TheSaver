@@ -1,8 +1,13 @@
 import React from 'react'
+import Home from './Pages/Home'
+import CreatePost from './Pages/CreatePost'
 
 const App = () => {
   return (
-    <div>App</div>
+    <div>
+      <CreatePost />
+      <Home />
+    </div>
   )
 }
 
