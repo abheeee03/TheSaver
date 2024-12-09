@@ -3,9 +3,9 @@ import PostList from './Components/PostList'
 
 const Home = () => {
   return (
-    <div className='bg-gray-900 p-10'>
-        <PostList />
-    </div>
+    <main className="min-h-[calc(100vh-64px)] bg-gray-900">
+      <PostList />
+    </main>
   )
 }
 
