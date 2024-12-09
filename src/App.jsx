@@ -1,12 +1,12 @@
 import React from 'react'
 import Home from './Pages/Home'
-import CreatePost from './Pages/CreatePost'
+import Navbar from './Pages/Components/Navbar'
 
 const App = () => {
   return (
     <div>
-      <CreatePost />
-      <Home />
+      <Navbar/>
+      <Home />  
     </div>
   )
 }

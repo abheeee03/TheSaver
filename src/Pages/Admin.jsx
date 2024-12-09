@@ -1,16 +1,20 @@
 import React, { useEffect, useState } from 'react'
-import { db } from '../../firebase/firebase'
-import { collection, getDocs } from 'firebase/firestore'
-import Post from './PostCard';
-import LoadingSpinner from './LoadingSpinner';
+import {db} from '../firebase/firebase'
+import { collection, deleteDoc, getDoc, getDocs } from 'firebase/firestore'
+import Post from './Components/PostCard';
+import LoadingSpinner from './Components/LoadingSpinner';
 
 
-const PostList = () => {
+const Admin = () => {
 
     const [postList, setpostList] = useState([]);
     const postsCollectionRef = collection(db, "Posts")
     
-    
+    const deletePost = async (id) => {
+        const doc = await getDoc(postsCollectionRef, id)
+        await deleteDoc(doc)
+    }
+
     const getPosts = async () => {
         const RawData = await getDocs(postsCollectionRef)
         const data = RawData.docs.map((doc) => ({
@@ -31,11 +35,11 @@ const PostList = () => {
                 <LoadingSpinner />
             ) : (
                 postList.map((post) => (
-                    <Post key={post.id} Title={post.Title} id={post.id} Desc={post.Desc} />
+                    <Post key={post.id} Title={post.Title} Desc={post.Desc} />
                 ))
             )}
         </div>
     )
 }
 
-export default PostList
+export default Admin

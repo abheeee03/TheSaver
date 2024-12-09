@@ -3,7 +3,7 @@ import PostList from './Components/PostList'
 
 const Home = () => {
   return (
-    <div>
+    <div className='bg-gray-900 p-10'>
         <PostList />
     </div>
   )
