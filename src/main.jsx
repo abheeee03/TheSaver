@@ -7,7 +7,8 @@ import CreatePost from './Pages/CreatePost'
 import About from './Pages/About'
 import Admin from './Pages/Admin'
 import Post from './Pages/Post'
-
+import Login from './Pages/Login'
+import Register from './Pages/Register'
 
 const Router = createBrowserRouter([
   {
@@ -29,6 +30,14 @@ const Router = createBrowserRouter([
   {
     path: '/posts/:id',
     element: <Post/>
+  },
+  {
+    path: '/login',
+    element: <Login/>
+  },
+  {
+    path: '/register',
+    element: <Register/>
   }
 ])
 
